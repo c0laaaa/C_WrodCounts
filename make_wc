@@ -1,0 +1,11 @@
+word_counts: ObjectFile/getword.o ObjectFile/tree.o ObjectFile/main.o
+	gcc ObjectFile/getword.o ObjectFile/tree.o ObjectFile/main.o -g -o word_counts
+
+ObjectFile/getword.o: SourceFile/getword.c SourceFile/head.h
+	gcc -c SourceFile/getword.c -o ObjectFile/getword.o
+
+ObjectFile/tree.o: SourceFile/tree.c SourceFile/head.h
+	gcc -c SourceFile/tree.c -o ObjectFile/tree.o
+
+ObjectFile/main.o: SourceFile/main.c SourceFile/head.h
+	gcc -c SourceFile/main.c -o ObjectFile/main.o
